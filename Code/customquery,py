@@ -1,0 +1,39 @@
+import requests
+import re
+import json
+import os
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+graphql = False
+
+url = "https://www.bahn.de/web/api/angebote/fahrplan"
+
+with open(os.path.join(script_dir,"..","Configs","body.json"),"r",encoding="utf-8") as qf:
+    payload = json.load(qf,)
+
+
+json_data = json.dumps(payload, ensure_ascii=False)  # keep umlauts as-is
+
+with open(os.path.join(script_dir,"..","Configs","headers.json"),"r") as qf:
+    headers = json.load(qf)
+
+response = requests.post(
+    url,
+    headers=headers,
+    data=json_data.encode("utf-8")  # explicit UTF-8 encoding
+)
+
+if response.status_code == 201:
+    data = response.json()
+    with open(os.path.join(script_dir,"test_res","bahn.json"),"w",encoding="utf-8") as qf:
+        json.dump(data, qf, indent=4, ensure_ascii=False)
+
+"""
+data['verbindungen'][0]['verbindungsAbschnitte'][0]['halte'][0]
+data['verbindungen'][0]['angebotsPreis']['betrag']
+data['verbindungen'][0]['verbindungsAbschnitte'][0]['verkehrsmittel']['produktGattung']
+data['verbindungen'][0]['verbindungsAbschnitte'][0]['verkehrsmittel']['name']
+data['verbindungen'][0]['verbindungsAbschnitte'][0]['verkehrsmittel']['typ']
+"""
