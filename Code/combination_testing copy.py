@@ -1,27 +1,29 @@
 start = 1
 goal = 10
 
+start = 1
+goal = 4
 
-def all_combs(start,goal):
-    path_list = [[start]]
-    final_list = []
-    while path_list:
-        cand = path_list.pop(0)
-        pot_ends = list( range(start+1,goal+1))
+all_paths = [[start]]
+final_paths = []
 
-        while pot_ends:
-            end = pot_ends.pop(0)
-            if cand[-1] < end:
-                interm = cand + [end]
+while all_paths:
+    cand = all_paths.pop(0)
 
-                if end == goal:
-                    final_list.append(interm)
-                else:
-                    path_list.append(interm)
+    interm_stop = cand[-1]
 
-    return final_list
+    bigger_nums = list(range(interm_stop+1,goal+1))
 
-final_list = all_combs(start,goal)
-print(final_list)
+    new_paths = [cand + [num] for num in bigger_nums]
+
+    interm_paths = [path for path in new_paths if path[-1] < goal ]
+    fin_paths= [path for path in new_paths if path[-1] == goal ]
+
+    all_paths.extend(interm_paths)
+    final_paths.extend(fin_paths)
+
+print(final_paths)
+
+
                 
 
