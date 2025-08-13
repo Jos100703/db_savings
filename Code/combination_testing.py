@@ -1,24 +1,53 @@
+start = 1
+goal = 10
 
-num_bs = 4
-final_res = [[] for _ in range(num_bs)]
+start = 1
+goal = 4
 
-def combination_test(start,goal):
-    av_trav = [i for i in range(start+1, goal+1)]
-    temp_res = []
+all_paths = [[start]]
+final_paths = []
 
-    for end in av_trav:
-        if end == goal:
-            final_res[start-1].append((temp_res))
-        else:
-            temp_res.append((start, end))
-            while temp_res[-1][1] <= goal:
-                temp_res.append(combination_test(end, goal))
+while all_paths:
+    cand = all_paths.pop(0)
 
-    return (start,end)            
+    interm_stop = cand[-1]
+
+    bigger_nums = list(range(interm_stop+1,goal+1))
+
+    new_paths = [cand + [num] for num in bigger_nums]
+
+    interm_paths = [path for path in new_paths if path[-1] < goal ]
+    fin_paths= [path for path in new_paths if path[-1] == goal ]
+
+    all_paths.extend(interm_paths)
+    final_paths.extend(fin_paths)
+
+print(final_paths)
 
 
-combination_test(1,4)
+def all_combs(paths,goal):
+    paths = paths
+    while set([path[-1] for path in paths]) != {goal}:
+        new_paths = []
+        next_stops = range(2,goal+1)
+        for cand in paths:
+            cand_new = [cand + [num] for num in next_stops if num > cand[-1]]
+            if not cand_new:
+                cand_new = [cand]
+            new_paths.extend(cand_new)
+
+        paths = new_paths
+
+        
+        all_combs(paths,goal)
+    
+    
+
+    return paths
+
+print(all_combs([[1]],4))
 
 
 
-assert final_res == [[(1,2),(2,3),(3,4)],[(1,2),(2,4)],[(1,3),(2,4)],[(1,4)] ], "Combination test failed, check the logic in combination_test function."
+                
+
