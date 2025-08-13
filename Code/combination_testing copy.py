@@ -1,40 +1,27 @@
-num_hs = 5
-
-# def all_combs(start,goal):
 start = 1
-goal = 4
-
-all_poss = [[[1]] for _ in range(start,goal) ]
-min_start = list(range(start,goal+1))
-av_routes = [list(range(min_start_ind+1,goal+1)) for min_start_ind in min_start]
+goal = 10
 
 
-for index,interm_goals in enumerate(av_routes):
-    
-    for poss in all_poss:
-        while interm_goals:
-            interm_goal = interm_goals.pop(0)
+def all_combs(start,goal):
+    path_list = [[start]]
+    final_list = []
+    while path_list:
+        cand = path_list.pop(0)
+        pot_ends = list( range(start+1,goal+1))
 
-            if all_poss == [[[1], [1, 2]], [[1], [1, 3]], [[1], [1, 4]]]:
-                pass
+        while pot_ends:
+            end = pot_ends.pop(0)
+            if cand[-1] < end:
+                interm = cand + [end]
 
-            if interm_goal > poss[-1][-1]:
-                poss.append([poss[-1][-1] ,interm_goal])
-                
-                if len(interm_goals) > 0:
-                    interm_goals.append(interm_goals[0])
+                if end == goal:
+                    final_list.append(interm)
                 else:
-                    break
+                    path_list.append(interm)
 
+    return final_list
 
+final_list = all_combs(start,goal)
+print(final_list)
+                
 
-    # return all_poss
-
-# all_combs(1,num_hs)
-
-
-
-
-
-
-assert all_poss == [[(1,2),(2,3),(3,4)],[(1,2),(2,4)],[(1,3),(2,4)],[(1,4)] ], "Combination test failed, check the logic in combination_test function."
