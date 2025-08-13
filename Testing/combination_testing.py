@@ -25,27 +25,27 @@ while all_paths:
 print(final_paths)
 
 
-def all_combs(paths,goal):
-    paths = paths
-    while set([path[-1] for path in paths]) != {goal}:
-        new_paths = []
-        next_stops = range(2,goal+1)
-        for cand in paths:
-            cand_new = [cand + [num] for num in next_stops if num > cand[-1]]
-            if not cand_new:
-                cand_new = [cand]
-            new_paths.extend(cand_new)
+def all_combs(start:int,goal:int):
+    paths = [[start]]
+    next_stops = range(2,goal+1)
 
-        paths = new_paths
+    while paths:
+        cand = paths.pop(0)
+        cand_new =[cand + [num] for num in next_stops if num > cand[-1]]
+        if not cand_new:
+            cand_new = [cand]
 
-        
-        all_combs(paths,goal)
-    
-    
+        paths.extend(cand_new)
 
+
+        if set([path[-1] for path in paths]) == {goal}:
+            break
+  
     return paths
 
-print(all_combs([[1]],4))
+final_res_opt= all_combs([[start]],goal)
+print(final_res_opt)
+
 
 
 

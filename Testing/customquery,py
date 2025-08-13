@@ -31,6 +31,12 @@ if response.status_code == 201:
         json.dump(data, qf, indent=4, ensure_ascii=False)
 
 """
+data['verbindungen'][0]['verbindungsAbschnitte'][0]['halte'][0]['id']
+data['verbindungen'][0]['verbindungsAbschnitte'][0]['halte'][0]['abfahrtsZeitpunkt']
+data['verbindungen'][0]['verbindungsAbschnitte'][0]['halte'][0]['bahnhofsInfoId']
+data['verbindungen'][0]['verbindungsAbschnitte'][0]['halte'][0]['extId']
+data['verbindungen'][0]['verbindungsAbschnitte'][0]['halte'][0]['name']
+data['verbindungen'][0]['ctxRecon']
 data['verbindungen'][0]['verbindungsAbschnitte'][0]['halte'][0]
 data['verbindungen'][0]['angebotsPreis']['betrag']
 data['verbindungen'][0]['verbindungsAbschnitte'][0]['verkehrsmittel']['produktGattung']

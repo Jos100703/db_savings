@@ -20,12 +20,8 @@
                     "ankunftsOrtExtId": "8003368",
                     "auslastungsmeldungen": [
                         {
-                            "klasse": "KLASSE_1",
-                            "stufe": 0
-                        },
-                        {
                             "klasse": "KLASSE_2",
-                            "stufe": 0
+                            "stufe": 1
                         }
                     ],
                     "halte": [
@@ -34,12 +30,8 @@
                             "abfahrtsZeitpunkt": "2025-08-15T16:18:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -58,12 +50,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T16:20:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -81,12 +69,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T16:24:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "6",
@@ -104,12 +88,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T16:26:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -543,7 +523,7 @@
                 }
             ],
             "angebotsPreis": {
-                "betrag": 103.69,
+                "betrag": 123.69,
                 "waehrung": "EUR",
                 "mwst": []
             },
@@ -586,12 +566,8 @@
                     "ankunftsOrtExtId": "8000207",
                     "auslastungsmeldungen": [
                         {
-                            "klasse": "KLASSE_1",
-                            "stufe": 0
-                        },
-                        {
                             "klasse": "KLASSE_2",
-                            "stufe": 0
+                            "stufe": 1
                         }
                     ],
                     "halte": [
@@ -600,12 +576,8 @@
                             "abfahrtsZeitpunkt": "2025-08-15T16:18:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -624,12 +596,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T16:20:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -647,12 +615,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T16:24:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "6",
@@ -670,12 +634,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T16:26:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -693,12 +653,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T16:30:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "10",
@@ -1335,12 +1291,8 @@
                     "ankunftsOrtExtId": "8003368",
                     "auslastungsmeldungen": [
                         {
-                            "klasse": "KLASSE_1",
-                            "stufe": 0
-                        },
-                        {
                             "klasse": "KLASSE_2",
-                            "stufe": 0
+                            "stufe": 1
                         }
                     ],
                     "halte": [
@@ -1349,12 +1301,8 @@
                             "abfahrtsZeitpunkt": "2025-08-15T16:38:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -1373,12 +1321,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T16:40:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -1396,12 +1340,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T16:44:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "6",
@@ -1419,12 +1359,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T16:46:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -1962,12 +1898,8 @@
                     "ankunftsOrtExtId": "8000207",
                     "auslastungsmeldungen": [
                         {
-                            "klasse": "KLASSE_1",
-                            "stufe": 0
-                        },
-                        {
                             "klasse": "KLASSE_2",
-                            "stufe": 0
+                            "stufe": 1
                         }
                     ],
                     "halte": [
@@ -1976,12 +1908,8 @@
                             "abfahrtsZeitpunkt": "2025-08-15T17:18:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -2000,12 +1928,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T17:20:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -2023,12 +1947,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T17:24:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "6",
@@ -2046,12 +1966,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T17:26:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -2069,12 +1985,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T17:30:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "10",
@@ -2516,7 +2428,7 @@
                 }
             ],
             "angebotsPreis": {
-                "betrag": 93.69,
+                "betrag": 103.69,
                 "waehrung": "EUR",
                 "mwst": []
             },
@@ -2559,12 +2471,8 @@
                     "ankunftsOrtExtId": "8000207",
                     "auslastungsmeldungen": [
                         {
-                            "klasse": "KLASSE_1",
-                            "stufe": 0
-                        },
-                        {
                             "klasse": "KLASSE_2",
-                            "stufe": 0
+                            "stufe": 1
                         }
                     ],
                     "halte": [
@@ -2573,12 +2481,8 @@
                             "abfahrtsZeitpunkt": "2025-08-15T17:18:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -2597,12 +2501,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T17:20:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -2620,12 +2520,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T17:24:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "6",
@@ -2643,12 +2539,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T17:26:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "2",
@@ -2666,12 +2558,8 @@
                             "ankunftsZeitpunkt": "2025-08-15T17:30:00",
                             "auslastungsmeldungen": [
                                 {
-                                    "klasse": "KLASSE_1",
-                                    "stufe": 0
-                                },
-                                {
                                     "klasse": "KLASSE_2",
-                                    "stufe": 0
+                                    "stufe": 1
                                 }
                             ],
                             "gleis": "10",
@@ -3208,4 +3096,77 @@
                 {
                     "klasse": "KLASSE_1",
                     "stufe": 4,
-                    "anzeigeText": "Wir erwarten im Verlauf Ihrer Reise eine außergewöhnlich hohe Auslastung in der 1. Klasse. Reisende, die noch keine Fahrkarte gekauft haben, wählen bitte eine andere Verbindung oder buchen ein Ticket der 2. Klasse."
+                    "anzeigeText": "Wir erwarten im Verlauf Ihrer Reise eine außergewöhnlich hohe Auslastung in der 1. Klasse. Reisende, die noch keine Fahrkarte gekauft haben, wählen bitte eine andere Verbindung oder buchen ein Ticket der 2. Klasse.",
+                    "kurzText": "Außergewöhnlich hohe Auslastung erwartet",
+                    "langText": "Wir erwarten im Verlauf Ihrer Reise eine außergewöhnlich hohe Auslastung in der 1. Klasse. Reisende, die noch keine Fahrkarte gekauft haben, wählen bitte eine andere Verbindung oder buchen ein Ticket der 2. Klasse."
+                },
+                {
+                    "klasse": "KLASSE_2",
+                    "stufe": 4,
+                    "anzeigeText": "Wir erwarten im Verlauf Ihrer Reise eine außergewöhnlich hohe Auslastung in der 2. Klasse. Reisende, die noch keine Fahrkarte gekauft haben, wählen bitte eine andere Verbindung oder buchen ein Ticket der 1. Klasse.",
+                    "kurzText": "Außergewöhnlich hohe Auslastung erwartet",
+                    "langText": "Wir erwarten im Verlauf Ihrer Reise eine außergewöhnlich hohe Auslastung in der 2. Klasse. Reisende, die noch keine Fahrkarte gekauft haben, wählen bitte eine andere Verbindung oder buchen ein Ticket der 1. Klasse."
+                },
+                {
+                    "klasse": "KLASSE_1",
+                    "stufe": 99,
+                    "anzeigeText": "Wir erwarten im Verlauf Ihrer Reise eine außergewöhnlich hohe Auslastung. Reisende, die noch keine Fahrkarte gekauft haben, wählen bitte eine andere Verbindung.",
+                    "kurzText": "Außergewöhnlich hohe Auslastung erwartet",
+                    "langText": "Wir erwarten im Verlauf Ihrer Reise eine außergewöhnlich hohe Auslastung. Reisende, die noch keine Fahrkarte gekauft haben, wählen bitte eine andere Verbindung."
+                },
+                {
+                    "klasse": "KLASSE_2",
+                    "stufe": 99,
+                    "anzeigeText": "Wir erwarten im Verlauf Ihrer Reise eine außergewöhnlich hohe Auslastung. Reisende, die noch keine Fahrkarte gekauft haben, wählen bitte eine andere Verbindung.",
+                    "kurzText": "Außergewöhnlich hohe Auslastung erwartet",
+                    "langText": "Wir erwarten im Verlauf Ihrer Reise eine außergewöhnlich hohe Auslastung. Reisende, die noch keine Fahrkarte gekauft haben, wählen bitte eine andere Verbindung."
+                }
+            ],
+            "himMeldungen": [],
+            "risNotizen": [],
+            "priorisierteMeldungen": [],
+            "reservierungsMeldungen": [],
+            "isAngebotseinholungNachgelagert": false,
+            "isAlterseingabeErforderlich": false,
+            "serviceDays": [
+                {
+                    "lastDateInPeriod": "2025-08-15",
+                    "regular": "nicht täglich",
+                    "irregular": "15. Aug",
+                    "planningPeriodBegin": "2024-12-15",
+                    "planningPeriodEnd": "2025-12-13",
+                    "weekdays": [
+                        "FR"
+                    ]
+                }
+            ],
+            "angebotsPreis": {
+                "betrag": 73.69,
+                "waehrung": "EUR",
+                "mwst": []
+            },
+            "angebotsPreisKlasse": "KLASSE_2",
+            "abPreisInfo": {},
+            "hasTeilpreis": false,
+            "reiseAngebote": [],
+            "angebotsInformationen": [
+                "Reisende mit Deutschland-Ticket können dieses in den Optionen \"Reisende\" angeben. Dadurch kann die Reise günstiger sein, da Sie nur die Fernverkehrsstrecke buchen. Es kann zu eingeschränkten Fahrgastrechten kommen."
+            ],
+            "angebotsInformationenAsObject": [
+                {
+                    "code": "MDA-DT-HINWEIS",
+                    "nachrichtKurz": "Reisende mit Deutschland-Ticket können dieses in den Optionen \"Reisende\" angeben. Dadurch kann die Reise günstiger sein, da Sie nur die Fernverkehrsstrecke buchen. Es kann zu eingeschränkten Fahrgastrechten kommen.",
+                    "nachrichtLang": "Reisende mit Deutschland-Ticket können dieses in den Optionen \"Reisende\" angeben. Dadurch kann die Reise günstiger sein, da Sie nur die Fernverkehrsstrecke buchen. Es kann zu eingeschränkten Fahrgastrechten kommen.",
+                    "fahrtRichtungKennzeichen": "HINFAHRT"
+                }
+            ],
+            "hinRueckPauschalpreis": false,
+            "isReservierungAusserhalbVorverkaufszeitraum": false,
+            "gesamtAngebotsbeziehungList": []
+        }
+    ],
+    "verbindungReference": {
+        "earlier": "3|OB|MTµ14µ353778µ353778µ354067µ354067µ0µ0µ66021µ353744µ1µ0µ18µ0µ0µ-2147483648µ1µ2|PDHµ000c1c5a7cd1f75f97913297f70de5e6|RDµ15082025|RTµ154700|USµ0|RSµINIT",
+        "later": "3|OF|MTµ14µ353838µ353838µ354153µ354263µ0µ0µ565µ353799µ5µ0µ8µ0µ0µ-2147483648µ1µ2|PDHµ000c1c5a7cd1f75f97913297f70de5e6|RDµ15082025|RTµ154700|USµ0|RSµINIT"
+    }
+}
