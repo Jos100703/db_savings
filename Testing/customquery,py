@@ -43,3 +43,11 @@ data['verbindungen'][0]['verbindungsAbschnitte'][0]['verkehrsmittel']['produktGa
 data['verbindungen'][0]['verbindungsAbschnitte'][0]['verkehrsmittel']['name']
 data['verbindungen'][0]['verbindungsAbschnitte'][0]['verkehrsmittel']['typ']
 """
+
+"""
+1. Verbindungen
+    1.1 Abschnitte/Verkehrsmittel
+        1.1.1 Halte
+
+
+"""

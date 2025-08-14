@@ -52,4 +52,7 @@ class DbReq:
         return self
 
 
-class Db
+class DbCon:
+    def __init__(self, db_req:DbReq):
+        self.raw_res = db_req.raw_res
+        
