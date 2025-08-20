@@ -17,5 +17,7 @@ with open(os.path.join(script_dir,"..", "Testing","test_res", "input_url.txt"),"
 
 db_req = DbReq.DbReq.from_input_link(url_input)
 
+db_req.retrieve_data()
+
 print("hello world")
 

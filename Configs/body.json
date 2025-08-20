@@ -1,7 +1,7 @@
 {
-    "abfahrtsHalt": "A=1@O=Köln-Dellbrück@X=7070124@Y=50981440@U=80@L=8003367@B=1@p=1753912532@i=U×008015556@",
-    "anfrageZeitpunkt": "2025-08-15T15:47:22",
-    "ankunftsHalt": "A=1@O=München Hbf@X=11558339@Y=48140229@U=80@L=8000261@B=1@p=1750894836@i=U×008020347@",
+    "abfahrtsHalt": "A=1@O=Hamburg Hbf@X=10006909@Y=53552733@U=80@L=8002549@B=1@p=1754340738@i=U×008001071@",
+    "anfrageZeitpunkt": "2025-09-04T22:48:14",
+    "ankunftsHalt": "A=1@O=Berlin Hbf@X=13369549@Y=52525589@U=80@L=8011160@B=1@p=1754340738@i=U×008065969@",
     "ankunftSuche": "ABFAHRT",
     "klasse": "KLASSE_2",
     "produktgattungen": [

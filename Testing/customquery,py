@@ -2,6 +2,9 @@ import requests
 import re
 import json
 import os
+import httpx
+# import socket, urllib3.util.connection as cn
+# cn.allowed_gai_family = lambda: socket.AF_INET
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -13,17 +16,26 @@ url = "https://www.bahn.de/web/api/angebote/fahrplan"
 with open(os.path.join(script_dir,"..","Configs","body.json"),"r",encoding="utf-8") as qf:
     payload = json.load(qf,)
 
-
-json_data = json.dumps(payload, ensure_ascii=False)  # keep umlauts as-is
+json_data = json.dumps(payload)  # keep umlauts as-is
 
 with open(os.path.join(script_dir,"..","Configs","headers.json"),"r") as qf:
     headers = json.load(qf)
 
-response = requests.post(
-    url,
-    headers=headers,
-    data=json_data.encode("utf-8")  # explicit UTF-8 encoding
-)
+
+
+for i in range(1000):
+    count = i
+    response = requests.post(
+        url,
+        headers=headers,
+        data=json_data.encode("utf-8")  # explicit UTF-8 encoding
+    )   
+    print(f"Request {count} sent")
+    if response.status_code != 201:
+            print(count)
+
+
+
 
 if response.status_code == 201:
     data = response.json()

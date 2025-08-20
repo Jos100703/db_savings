@@ -1,4 +1,7 @@
 import os
+
+from typing import List,Dict,Any
+from .utils import safe_get_list
 import json
 import requests
 from copy import deepcopy
@@ -21,10 +24,11 @@ class DbReq:
         self.start_id = start_id
         self.end_id = end_id
 
-        self.raw_res = None
+        self.raw_res:requests.Response = None
+        self.json:dict = None
 
         self.base_params["abfahrtsHalt"] = start_id
-        self.base_params["anfrageZeitpunkt"] = start_id
+        self.base_params["ankunftsHalt"] = end_id
         
 
     @classmethod
@@ -46,13 +50,44 @@ class DbReq:
         self.raw_res = requests.post(
             self.base_url,
             headers=self.headers,
-            data=self.base_params.encode("utf-8")  # explicit UTF-8 encoding
+            data=json.dumps(self.base_params).encode("utf-8")  # explicit UTF-8 encoding
         )
 
         return self
 
+    def get_json(self):
+        if self.raw_res is None:
+            raise ValueError("Data has not been retrieved yet. Call retrieve_data() first.")
+        if self.raw_res.status_code != 201:
+            raise ValueError(f"Request failed with status code {self.raw_res.status_code}")
+        self.json = self.raw_res.json()
+        return self
+    
 
-class DbCon:
+class DbParser:
+    fields_tb_parsed: Dict[str, List[str]] 
+
     def __init__(self, db_req:DbReq):
-        self.raw_res = db_req.raw_res
+        self.dict = db_req.json
+
+    def get_connections(self):
+        return safe_get_list(self.dict,self.fields_tb_parsed)
+
+
+
+class DbCon(DbParser):
+    fields_tb_parsed = {"ctxRec":"ctxRec",
+                        "Fahrtkosten":["AngebotsPreis","betrag"]}
+
+    def __init__(self, db_req:DbReq):
+        super().__init__(db_req)
+        self.parsed = self.get_connections()
+        self.ctxRec = self.parsed["ctxRec"]
+        self.betrag = self.parsed["AngebotsPreis"]["betrag"]
+
+class DbConAbs(DbParser):
+    # fields_tb_parsed = 
+    pass
+
+    
         
