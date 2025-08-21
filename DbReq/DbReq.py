@@ -1,7 +1,7 @@
 import os
 
 from typing import List,Dict,Any
-from .utils import safe_get_list
+from .utils import get_from_list,parse_hafas_lid
 import json
 import requests
 from copy import deepcopy
@@ -26,6 +26,9 @@ class DbReq:
 
         self.raw_res:requests.Response = None
         self.json:dict = None
+
+        self.base_info:dict = {"origin":parse_hafas_lid(start_id),
+                               "destination": parse_hafas_lid(end_id)}
 
         self.base_params["abfahrtsHalt"] = start_id
         self.base_params["ankunftsHalt"] = end_id
@@ -67,27 +70,35 @@ class DbReq:
 class DbParser:
     fields_tb_parsed: Dict[str, List[str]] 
 
-    def __init__(self, db_req:DbReq):
-        self.dict = db_req.json
-
-    def get_connections(self):
-        return safe_get_list(self.dict,self.fields_tb_parsed)
+    @classmethod
+    def from_parent(cls,parent,dict_data: List[Dict[str, Any]]):
+        return [cls(parent,item) for item in get_from_list(dict_data,cls.fields_tb_parsed)]
 
 
 
 class DbCon(DbParser):
-    fields_tb_parsed = {"ctxRec":"ctxRec",
-                        "Fahrtkosten":["AngebotsPreis","betrag"]}
+    fields_tb_parsed = {"ctxRec":["ctxRecon"],
+                        "Fahrtkosten":["angebotsPreis","betrag"],
+                        "child" : ["verbindungsAbschnitte"]}
 
-    def __init__(self, db_req:DbReq):
-        super().__init__(db_req)
-        self.parsed = self.get_connections()
-        self.ctxRec = self.parsed["ctxRec"]
-        self.betrag = self.parsed["AngebotsPreis"]["betrag"]
+    def __init__(self,parent:DbReq, parsed:Dict[str, Any]):
+        self.base_info = parent.base_info
+        self.ctxRec = parsed["ctxRec"]
+        self.betrag = parsed["AngebotsPreis"]["betrag"]
+        
+        self.dep_time = parent.base_params["anfrageZeitpunkt"]
+        self.dep_bhf = parent.base_info["origin"]["name"]
+        self.end_id = parent.base_info["destination"]["name"]
+
+        self.dict_cont = parsed["child"]
 
 class DbConAbs(DbParser):
-    # fields_tb_parsed = 
-    pass
+    fields_tb_parsed = ["externeBahnhofsinfoIdOrigin","externeBahnhofsinfoIdDestination","abfahrtsZeitpunkt","abfahrtsOrt","abfahrtsOrtExtId","abschnittsDauer","abschnittsAnteil","ankunftsZeitpunkt","ankunftsOrt","ankunftsOrtExtId"]
+    
+    def __init__(self, db_req:DbCon):
+        super().__init__(db_req.parsed)
+
+    
 
     
         

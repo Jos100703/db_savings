@@ -18,6 +18,9 @@ with open(os.path.join(script_dir,"..", "Testing","test_res", "input_url.txt"),"
 db_req = DbReq.DbReq.from_input_link(url_input)
 
 db_req.retrieve_data()
+db_req.get_json()
+db_con = DbReq.DbCon.from_parent(db_req, db_req.json["verbindungen"])
+
 
 print("hello world")
 

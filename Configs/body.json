@@ -1,6 +1,6 @@
 {
     "abfahrtsHalt": "A=1@O=Hamburg Hbf@X=10006909@Y=53552733@U=80@L=8002549@B=1@p=1754340738@i=U×008001071@",
-    "anfrageZeitpunkt": "2025-09-04T22:48:14",
+    "anfrageZeitpunkt": "2025-09-04T16:48:14",
     "ankunftsHalt": "A=1@O=Berlin Hbf@X=13369549@Y=52525589@U=80@L=8011160@B=1@p=1754340738@i=U×008065969@",
     "ankunftSuche": "ABFAHRT",
     "klasse": "KLASSE_2",
