@@ -13,7 +13,7 @@ import DbReq
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 
-with open(os.path.join(script_dir,"..", "Testing","test_res", "input_url.txt"),"r") as f:
+with open(os.path.join(script_dir,"..", "00_Input", "input_url.txt"),"r") as f:
     url_input = f.read().strip()
 
 db_req = DbReq.DbReq.from_input_link(url_input)
@@ -32,6 +32,9 @@ final_data = [sec.__dict__ for sec in db_con_sec_stops]
 
 final_stops_full = pd.DataFrame.from_records(final_data)
 
-final_stops_full.to_csv(os.path.join(script_dir, "test_res", "bahn_con_sec_stops.csv"), index=False, encoding="utf-8-sig")
-print("hello world")
+# Reorder columns to match the expected output
+final_stops_full = final_stops_full[list(DbReq.DbConAbsStop.fields_tb_parsed.keys())+list(DbReq.DbConAbsStop.from_parent_inherit.keys())]
+
+
+final_stops_full.to_csv(os.path.join(script_dir, "..","02_Output", "Full_conn_stops.csv"), index=False, encoding="utf-8-sig")
 

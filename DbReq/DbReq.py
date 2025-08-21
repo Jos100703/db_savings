@@ -11,10 +11,10 @@ import urllib
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 class DbReq:
-    with open(os.path.join(script_dir, "..", "Configs", "base_params.json"), "r") as f:
+    with open(os.path.join(script_dir, "Configs", "base_params.json"), "r") as f:
         base_params =  json.load(f)
 
-    with open(os.path.join(script_dir, "..", "Configs", "headers.json"), "r") as f:
+    with open(os.path.join(script_dir, "Configs", "headers.json"), "r") as f:
         headers = json.load(f)
 
     base_url = "https://www.bahn.de/web/api/angebote/fahrplan"
@@ -126,6 +126,7 @@ class DbConAbs(DbParser):
     type = "ConnectionSection"
     from_parent_inherit = {
         **DbParser.from_parent_inherit,
+        "Fahrtkosten": "Fahrtkosten",
         "dep_bhf": "dep_bhf",
         "arr_bhf": "arr_bhf",
     }    
@@ -134,7 +135,7 @@ class DbConAbs(DbParser):
 
 class DbConAbsStop(DbParser):
     fields_tb_parsed = {
-        "name": ["name"],
+        "bhf_Zwischenstopp": ["name"],
         "routeIdx": ["routeIdx"],
         "ankunftsZeitpunkt": ["ankunftsZeitpunkt"],
         "abfahrtsZeitpunkt": ["abfahrtsZeitpunkt"],
@@ -146,10 +147,11 @@ class DbConAbsStop(DbParser):
     type = "ConnectionSectionStop"
     from_parent_inherit = {
         **DbParser.from_parent_inherit,
-        "dep_bhf_ORIGIN": "dep_bhf",
-        "arr_bhf_DESTINATION": "arr_bhf",
-        "dep_bhf_ORIGIN_INTERMEDIATE": "ankunftsOrt",
-        "arr_bhf_DESTINATION_INTERMEDIATE": "abfahrtsOrt",
+        "Fahrtkosten": "Fahrtkosten",
+        "dep_bhf_Gesamt": "dep_bhf",
+        "arr_bhf_Gesamt": "arr_bhf",
+        "dep_bhf_Steckenabschnitt": "ankunftsOrt",
+        "arr_bhf_Streckenabschnitt": "abfahrtsOrt",
         "verkehrsmittelProduktGattung":"verkehrsmittelProduktGattung",
         "verkehrsmittelName": "verkehrsmittelName",
     }
