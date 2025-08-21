@@ -27,12 +27,11 @@ Given a DB search URL, it retrieves the available connections (including interme
    ```bash
    python 01_Processing/main.py
    ```
-Retrieve the results
-
-The parsed connections will be available as a CSV in:
-```bash
-02_Output/Full_conn_stops.csv
-```
+3. **Retrieve the results**
+   The parsed connections will be available as a CSV in:
+   ```bash
+   02_Output/Full_conn_stops.csv
+   ```
 # Notes
 - Only the first few available connections (and their corresponding prices) are extracted for efficiency.
 - The project is designed for personal research and analysis of DB pricing; it is not affiliated with or supported by Deutsche Bahn.
