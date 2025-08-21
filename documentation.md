@@ -1,4 +1,5 @@
-# Project Documentation
+# Project Documentation 
+(AI-generated, but roughly read through and validated)
 
 This document provides an overview of the project structure, its components, and the data flow from input to output.
 
