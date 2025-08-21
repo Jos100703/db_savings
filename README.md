@@ -1,6 +1,9 @@
 # db_savings  
 Reverse engineering of the Deutsche Bahn Navigator API  
 
+# DISCLAIMER
+This approach only works from German IP-Adresses
+
 ## Overview  
 This project extracts train connection and pricing data directly from the Deutsche Bahn Navigator API.  
 Given a DB search URL, it retrieves the available connections (including intermediate stops and prices) and outputs the results as a structured CSV.  
