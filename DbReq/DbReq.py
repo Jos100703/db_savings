@@ -69,6 +69,19 @@ class DbReq:
 
 class DbParser:
     fields_tb_parsed: Dict[str, List[str]] 
+    type: str 
+    from_parent_inherit =  {"tripId":"tripId"} 
+
+    def __init__(self, parsed: Dict[str, Any], parent = None):
+        if parent is not None:
+            for key,attr in self.from_parent_inherit.items():
+                setattr(self, key, getattr(parent, attr, None))
+        
+        for attr in self.fields_tb_parsed.keys():
+            setattr(self, attr, parsed.get(attr, None))
+        
+        return self
+
 
     @classmethod
     def from_parent(cls,parent,dict_data: List[Dict[str, Any]]):
@@ -77,28 +90,70 @@ class DbParser:
 
 
 class DbCon(DbParser):
-    fields_tb_parsed = {"ctxRec":["ctxRecon"],
+    fields_tb_parsed = {"tripId": ["tripId"],
+                        "ctxRecon":["ctxRecon"],
                         "Fahrtkosten":["angebotsPreis","betrag"],
-                        "child" : ["verbindungsAbschnitte"]}
+                        "child_dict" : ["verbindungsAbschnitte"]}
+    
+    type = "Connection"
 
     def __init__(self,parent:DbReq, parsed:Dict[str, Any]):
+        super().__init__(parsed)
         self.base_info = parent.base_info
-        self.ctxRec = parsed["ctxRec"]
-        self.betrag = parsed["AngebotsPreis"]["betrag"]
         
         self.dep_time = parent.base_params["anfrageZeitpunkt"]
         self.dep_bhf = parent.base_info["origin"]["name"]
-        self.end_id = parent.base_info["destination"]["name"]
+        self.arr_bhf = parent.base_info["destination"]["name"]
 
-        self.dict_cont = parsed["child"]
 
 class DbConAbs(DbParser):
-    fields_tb_parsed = ["externeBahnhofsinfoIdOrigin","externeBahnhofsinfoIdDestination","abfahrtsZeitpunkt","abfahrtsOrt","abfahrtsOrtExtId","abschnittsDauer","abschnittsAnteil","ankunftsZeitpunkt","ankunftsOrt","ankunftsOrtExtId"]
-    
-    def __init__(self, db_req:DbCon):
-        super().__init__(db_req.parsed)
+    fields_tb_parsed = {
+    "externeBahnhofsinfoIdOrigin": ["externeBahnhofsinfoIdOrigin"],
+    "externeBahnhofsinfoIdDestination": ["externeBahnhofsinfoIdDestination"],
+    "abfahrtsZeitpunkt": ["abfahrtsZeitpunkt"],
+    "abfahrtsOrt": ["abfahrtsOrt"],
+    "abfahrtsOrtExtId": ["abfahrtsOrtExtId"],
+    "abschnittsDauer": ["abschnittsDauer"],
+    "abschnittsAnteil": ["abschnittsAnteil"],
+    "ankunftsZeitpunkt": ["ankunftsZeitpunkt"],
+    "ankunftsOrt": ["ankunftsOrt"],
+    "ankunftsOrtExtId": ["ankunftsOrtExtId"],
+    "verkehrsmittelProduktGattung": ["verkehrsmittel","produktGattung"],
+    "verkehrsmittelName": ["verkehrsmittel","name"],
+    "verkehrsmittelTyp": ["verkehrsmittel","typ"],
+    "child_dict": ["halte"],
+}
+    type = "ConnectionSection"
+    from_parent_inherit = {
+        **DbParser.from_parent_inherit,
+        "dep_bhf": "dep_bhf",
+        "arr_bhf": "arr_bhf",
+    }    
+    def __init__(self,parent:DbCon, parsed:Dict[str, Any]):
+        super().__init__(parsed,parent)
 
-    
+class DbConAbsStop(DbParser):
+    fields_tb_parsed = {
+        "name": ["name"],
+        "routeIdx": ["routeIdx"],
+        "ankunftsZeitpunkt": ["ankunftsZeitpunkt"],
+        "abfahrtsZeitpunkt": ["abfahrtsZeitpunkt"],
+        "bahnhofsInfoId": ["bahnhofsInfoId"],
+        "extId": ["extId"],
+        "id": ["id"],
+    }
 
-    
+    type = "ConnectionSectionStop"
+    from_parent_inherit = {
+        **DbParser.from_parent_inherit,
+        "dep_bhf_ORIGIN": "dep_bhf",
+        "arr_bhf_DESTINATION": "arr_bhf",
+        "dep_bhf_ORIGIN_INTERMEDIATE": "ankunftsOrt",
+        "arr_bhf_DESTINATION_INTERMEDIATE": "abfahrtsOrt",
+        "verkehrsmittelProduktGattung":"verkehrsmittelProduktGattung",
+        "verkehrsmittelName": "verkehrsmittelName",
+    }
+
+    def __init__(self, parent: DbConAbs, parsed: Dict[str, Any]):
+        super().__init__(parsed, parent)
         
